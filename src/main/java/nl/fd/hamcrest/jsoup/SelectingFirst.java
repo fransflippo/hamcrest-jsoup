@@ -1,7 +1,6 @@
 package nl.fd.hamcrest.jsoup;
 
 import org.hamcrest.Description;
-import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
 import org.jsoup.nodes.Element;
@@ -42,8 +41,6 @@ public class SelectingFirst extends TypeSafeDiagnosingMatcher<Element> {
      * @param elementMatcher the matcher that the selected child nodes will be matched against
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element}
      */
-    @Factory
-    @SuppressWarnings("unchecked")
     public static Matcher<Element> selectingFirst(final String cssExpression, final Matcher<Element> elementMatcher) {
         return new SelectingFirst(cssExpression, elementMatcher);
     }

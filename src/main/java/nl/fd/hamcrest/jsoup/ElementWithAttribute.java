@@ -1,7 +1,6 @@
 package nl.fd.hamcrest.jsoup;
 
 import org.hamcrest.Description;
-import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
@@ -52,7 +51,6 @@ public class ElementWithAttribute extends TypeSafeDiagnosingMatcher<Element> {
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element} with the given {@code expectedValue} for the given {@code
      * attributeName}
      */
-    @Factory
     public static Matcher<Element> hasAttribute(final String attributeName,
                                                 final String expectedValue) {
         return new ElementWithAttribute(attributeName, Matchers.is(expectedValue));
@@ -67,7 +65,6 @@ public class ElementWithAttribute extends TypeSafeDiagnosingMatcher<Element> {
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element} with the given {@code expectedValue} for the given {@code
      * attributeName}
      */
-    @Factory
     public static Matcher<Element> hasAttribute(final String attributeName, final Matcher<? super String> attributeValueMatcher) {
         return new ElementWithAttribute(attributeName, attributeValueMatcher);
     }
@@ -80,7 +77,6 @@ public class ElementWithAttribute extends TypeSafeDiagnosingMatcher<Element> {
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element} with the given {@code expectedValue} for the "href"
      * @deprecated Use {@link #hasAttribute instead}
      */
-    @Factory
     public static Matcher<Element> hasHref(final String expectedValue) {
         return hasAttribute("href", Matchers.is(expectedValue));
     }
@@ -93,7 +89,6 @@ public class ElementWithAttribute extends TypeSafeDiagnosingMatcher<Element> {
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element} with the given {@code expectedValue} for the "href"
      * @deprecated Use {@link #hasAttribute instead}
      */
-    @Factory
     public static Matcher<Element> hasHref(final Matcher<? super String> attributeValueMatcher) {
         return hasAttribute("href", attributeValueMatcher);
     }

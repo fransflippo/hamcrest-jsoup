@@ -1,7 +1,6 @@
 package nl.fd.hamcrest.jsoup;
 
 import org.hamcrest.Description;
-import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
@@ -24,7 +23,6 @@ public class ElementWithInnerHtml extends TypeSafeDiagnosingMatcher<Element> {
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element}
      * @deprecated Use {@link #hasInnerHtml(String)} instead
      */
-    @Factory
     public static Matcher<Element> hasHtml(final String expectedValue) {
         return hasInnerHtml(expectedValue);
     }
@@ -35,7 +33,6 @@ public class ElementWithInnerHtml extends TypeSafeDiagnosingMatcher<Element> {
      * @param expectedValue The expected inner HTML
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element}
      */
-    @Factory
     public static Matcher<Element> hasInnerHtml(final String expectedValue) {
         return new ElementWithInnerHtml(expectedValue);
     }

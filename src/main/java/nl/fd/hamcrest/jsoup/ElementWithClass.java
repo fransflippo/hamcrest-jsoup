@@ -1,7 +1,6 @@
 package nl.fd.hamcrest.jsoup;
 
 import org.hamcrest.Description;
-import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
 import org.jsoup.nodes.Element;
@@ -27,7 +26,6 @@ public class ElementWithClass extends TypeSafeDiagnosingMatcher<Element> {
      * @param className The css class content to match
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element} with the specified css class(es)
      */
-    @Factory
     public static Matcher<Element> hasClass(final String className) {
         return new ElementWithClass(className);
     }

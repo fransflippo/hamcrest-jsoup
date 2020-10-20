@@ -1,7 +1,6 @@
 package nl.fd.hamcrest.jsoup;
 
 import org.hamcrest.Description;
-import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
@@ -24,7 +23,6 @@ public class ElementWithText extends TypeSafeDiagnosingMatcher<Element> {
      * @param text The text content to match
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element} with the given {@code text} as its own text content
      */
-    @Factory
     public static Matcher<Element> hasText(final String text) {
         return hasText(Matchers.is(text));
     }
@@ -35,7 +33,6 @@ public class ElementWithText extends TypeSafeDiagnosingMatcher<Element> {
      * @param textMatcher Matcher for the element's text
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element} with the given {@code text} as its own text content
      */
-    @Factory
     public static Matcher<Element> hasText(final Matcher<? super String> textMatcher) {
         return new ElementWithText(textMatcher);
     }

@@ -4,11 +4,11 @@ import org.hamcrest.Matcher;
 import org.hamcrest.StringDescription;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static nl.fd.hamcrest.jsoup.ElementWithData.hasData;
 import static org.hamcrest.Matchers.containsString;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ElementWithDataTest {
 

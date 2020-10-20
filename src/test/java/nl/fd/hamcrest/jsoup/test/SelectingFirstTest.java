@@ -1,18 +1,17 @@
 package nl.fd.hamcrest.jsoup.test;
 
-import nl.fd.hamcrest.jsoup.Selecting;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.StringDescription;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static nl.fd.hamcrest.jsoup.ElementWithText.hasText;
 import static nl.fd.hamcrest.jsoup.SelectingFirst.selectingFirst;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  *

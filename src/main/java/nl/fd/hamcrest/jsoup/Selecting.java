@@ -1,7 +1,6 @@
 package nl.fd.hamcrest.jsoup;
 
 import org.hamcrest.Description;
-import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
 import org.jsoup.nodes.Element;
@@ -12,9 +11,9 @@ import org.jsoup.select.Elements;
  */
 public class Selecting extends TypeSafeDiagnosingMatcher<Element> {
     private final String cssExpression;
-    private final Matcher<Iterable<? super Element>> selectionMatcher;
+    private final Matcher<Iterable<? extends Element>> selectionMatcher;
 
-    private Selecting(String cssExpression, Matcher<Iterable<? super Element>> selectionMatcher) {
+    private Selecting(String cssExpression, Matcher<Iterable<? extends Element>> selectionMatcher) {
         this.cssExpression = cssExpression;
         this.selectionMatcher = selectionMatcher;
     }
@@ -28,9 +27,7 @@ public class Selecting extends TypeSafeDiagnosingMatcher<Element> {
      *
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element}
      */
-    @Factory
-    @SuppressWarnings("unchecked")
-    public static Matcher<Element> selecting(final String cssExpression, final Matcher<Iterable<? super Element>> elementsMatcher) {
+    public static Matcher<Element> selecting(final String cssExpression, final Matcher<Iterable<? extends Element>> elementsMatcher) {
         return new Selecting(cssExpression, elementsMatcher);
     }
 
